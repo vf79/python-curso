@@ -1,0 +1,34 @@
+html {
+    min-height: 100%;
+    width: 80%;
+    margin: auto;
+}
+
+body {
+    background-color: #00ffff;
+    text-align: center;
+}
+
+img {
+    border-radius: 50%;
+}
+
+#logo_python {
+    width: 100px;
+}
+
+#logo_django {
+    width: 50px;
+}
+
+p {
+    padding: 5px;
+}
+
+p.principal {
+    border: 1px dashed #000000;
+}
+
+p.aviso {
+    border: 4px solid #ff0000;
+}
