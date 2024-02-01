@@ -2,12 +2,13 @@ import socket
 import httpx
 import requests
 
+url = "http://localhost/index.html"
 
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-client.connect(("example.com", 80))
+client.connect(("localhost", 9000))
 
-cmd = "GET http://example.com/index.html HTTP/1.0\r\n\r\n".encode()
+cmd = f"GET {url} HTTP/1.0\r\n\r\n".encode()
 client.send(cmd)
 
 while True:
@@ -19,11 +20,11 @@ while True:
 
 client.close()
 print("*" * 120)
-result = requests.get("http://example.com/index.html")
+result = requests.get(url)
 print(result.status_code)
 print(result.content)
 
 print("*" * 120)
-result = httpx.get("http://example.com/index.html")
+result = httpx.get(url)
 print(result.status_code)
 print(result.content)
