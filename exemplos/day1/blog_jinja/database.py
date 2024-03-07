@@ -25,12 +25,14 @@ posts = [
             A linguagem Python foi eleita a linguagem mais popular
             pela revista tech master e segue dominando o mundo.
             """,
-        "author": "Satoshi Namamoto"},
+        "author": "Satoshi Namamoto",
+    },
     {
         "title": "Como criar um blog utilizando Python",
         "content": """Neste tutorial você aprenderá como criar um blog \
             utilizando Python. <pre> import make_a_blog </pre>""",
-        "author": "Guido Van Rossum"},
+        "author": "Guido Van Rossum",
+    },
 ]
 
 # 4 - Inserimos os posts caso o banco de dados esteja vazio
@@ -41,7 +43,7 @@ if not count:
         INSERT INTO posts (title, content, author)
         VALUES (:title, :content, :author);
         """,
-        posts
+        posts,
     )
     conn.commit()
 
